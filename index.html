@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Program Mehdi ✨</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo" id="logo">Program Mehdi ✨</div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h1 class="big">Program Mehdi — الذكاء الصوتي والكتابة والتصميم</h1>
+      <p class="lead">كل الأدوات في صفحة واحدة: الكتابة بالصوت، إنشاء PDF، تصميم الشهادات، وتحرير الصور.</p>
+      <div class="grid">
+        <div class="card">
+          <h2>🎤 الكتابة بالصوت</h2>
+          <div class="controls-row">
+            <button class="gold-btn" id="startRec">ابدأ التسجيل</button>
+            <button class="gold-btn" id="stopRec">أوقف التسجيل</button>
+            <button class="gold-btn" id="speakText">استمع</button>
+            <button class="gold-btn" id="savePdf">حفظ كـ PDF</button>
+          </div>
+          <textarea id="voiceText" rows="6" placeholder="النص سيظهر هنا..."></textarea>
+        </div>
+
+        <div class="card">
+          <h2>🏅 تصميم الشهادات</h2>
+          <div class="controls-row">
+            <select id="certTemplate" class="big-input">
+              <option value="1">شهادة شكر</option>
+              <option value="2">شهادة تفوق</option>
+              <option value="3">شهادة معلم</option>
+            </select>
+            <input id="certificateName" class="big-input" placeholder="اكتب اسم هنا">
+            <button class="gold-btn" id="generateCert">إنشاء</button>
+            <button class="gold-btn" id="downloadCert">تحميل PNG</button>
+            <button class="gold-btn" id="downloadCertPdf">تحميل PDF</button>
+          </div>
+          <div class="cert-wrap"><canvas id="certCanvas" width="1200" height="850"></canvas></div>
+          <div class="note">يمكن رفع خلفية خاصة:</div>
+          <input type="file" id="certBgUpload" accept="image/*">
+        </div>
+
+        <div class="card full">
+          <h2>🖼️ تعديل الصور</h2>
+          <div class="controls-row">
+            <input type="file" id="imgUpload" accept="image/*">
+            <button class="gold-btn" id="addTextBtn">أضف نص</button>
+            <button class="gold-btn" id="saveImageBtn">حفظ الصورة</button>
+          </div>
+          <div class="editor-wrap"><canvas id="editCanvas" width="1000" height="700"></canvas></div>
+          <div class="note">اسحب النص لتحريكه، اضغط مرتين لحذف نص.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <audio id="clickSound"></audio>
+  <script src="app.js"></script>
+</body>
+</html>
